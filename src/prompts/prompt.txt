@@ -1,0 +1,4 @@
+Perform a full transcription of attached documents to LaTeX code. 
+Ensure maximal readability of the formulas. 
+Try to mimic the file structure as well as possible.
+The transcripted file should be in @LANGUAGE language (translate if needed).

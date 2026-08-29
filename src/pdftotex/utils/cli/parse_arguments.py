@@ -2,7 +2,7 @@ import argparse
 import logging
 from pathlib import Path
 
-from validate_args import validate
+from .validate_args import validate
 
 logger = logging.getLogger(__name__)
 
