@@ -2,6 +2,8 @@ import argparse
 import logging
 from pathlib import Path
 
+from ..safe_file import make_safe
+
 logger = logging.getLogger(__name__)
 
 DEFAULT_PROMPT_DIR = Path(__file__).parent.parent.parent / "prompts"
@@ -19,7 +21,7 @@ class Validator:
             if not file.is_file():
                 logger.warning(f"File {file} does not exist - skipping")
                 continue
-            valid_files.append(file)
+            valid_files.append(make_safe(file))
 
         if not valid_files:
             raise ValueError("No input files were given")
