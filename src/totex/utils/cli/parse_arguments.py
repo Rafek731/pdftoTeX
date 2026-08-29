@@ -26,7 +26,6 @@ def parse_arguments() -> argparse.Namespace:
         "-o",
         "--output",
         type=Path,
-        required=True,
         default=Path.cwd(),
         help="Destination path to save the files. Defaults to '.'",
     )
@@ -47,5 +46,11 @@ def parse_arguments() -> argparse.Namespace:
         "--language",
         type=str,
         default="english"
+    )
+    parser.add_argument(
+        "-a",
+        "--api-key",
+        type=str,
+        default="",
     )
     return validate(parser.parse_args())

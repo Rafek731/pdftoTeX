@@ -2,6 +2,7 @@ import argparse
 import logging
 from pathlib import Path
 
+from ..api_key import load_api_key, save_api_key
 from ..safe_file import make_safe
 
 logger = logging.getLogger(__name__)
@@ -44,11 +45,19 @@ class Validator:
         args.max_parallel_files = max(1, args.max_parallel_files)
         return args
 
+    @staticmethod
+    def api_key(args: argparse.Namespace) -> argparse.Namespace:
+        if not args.api_key:
+            args.api_key = load_api_key()
+        save_api_key(args.api_key)
+        return args
+
 def validate(args: argparse.Namespace) -> argparse.Namespace:
     args = Validator.language(args)
     args = Validator.input(args)
     args = Validator.output(args)
     args = Validator.model(args)
     args = Validator.max_parallel_files(args)
+    args = Validator.api_key(args)
     
     return args
