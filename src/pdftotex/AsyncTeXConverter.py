@@ -106,11 +106,13 @@ class AsyncTeXConverter:
                 file=filepath,
                 config={"display_name": filepath.stem},
             )
+        except APIError:
+            raise
         except Exception as exc:
-            raise APIError(f"Failed to upload '{filepath.name}' to Gemini Files API: {exc}") from exc
+            raise RuntimeError(f"Failed to upload '{filepath.name}' to Gemini Files API: {exc}") from exc
 
         if not uploaded_file.name:
-            raise APIError(f"Upload succeeded but received no file identifier for '{filepath.name}'.")
+            raise RuntimeError(f"Upload succeeded but received no file identifier for '{filepath.name}'.")
 
         try:
             response = await self.client.aio.models.generate_content(
