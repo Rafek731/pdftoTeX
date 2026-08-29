@@ -4,6 +4,7 @@ Your goal is to convert sent document into readable, good-lloking and logically 
 RULES OF TRANSCRIPTION:
 1. MATHEMATICS:
     - All formulas, equations, symbols, indieces, matrieces, fractions etc. write down in environments like $...$, align*, equation* and matrix.
+    - DO NOT USE \(...\) or \[...\]
     - Keep correct notation (e.g. vectors, limits, integrals, sets).
 
 2. TEXT AND STRUCTURE
