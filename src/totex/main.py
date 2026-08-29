@@ -4,8 +4,8 @@ from pathlib import Path
 
 from google import genai
 
-from pdftotex.AsyncTeXConverter import AsyncTeXConverter
-from pdftotex.utils import cli, load_api_key
+from totex.AsyncTeXConverter import AsyncTeXConverter
+from totex.utils import cli, load_api_key
 
 logger = logging.getLogger(__name__)
 

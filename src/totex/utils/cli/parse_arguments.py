@@ -8,8 +8,8 @@ logger = logging.getLogger(__name__)
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        prog="pdftotex",
-        usage="pdftotex FILE1 FILE2... "
+        prog="totex",
+        usage="totex FILE1 FILE2... "
         "[-o|--output OUTPUT] "
         "[-n|--max-parallel-files MAX_PARALLEL_FILES] "
         "[-m|--model MODEL] "

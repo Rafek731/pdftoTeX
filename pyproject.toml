@@ -1,5 +1,5 @@
 [project]
-name = "pdftoTeX"
+name = "totex"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-pdftotex = "pdftotex.main:main"
+totex = "totex.main:main"
 
 [dependency-groups]
 dev = [
